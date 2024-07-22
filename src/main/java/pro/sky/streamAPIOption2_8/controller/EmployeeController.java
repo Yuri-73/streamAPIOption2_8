@@ -22,10 +22,10 @@ public class EmployeeController {
     }
 
     @GetMapping("/add")
-    //localhost:8090/employee/add?firstName=Владимир&lastName=Гуляницкий&salary=25000&departmentId=2
-    //localhost:8090/employee/add?firstName=Виктор&lastName=Судоплатов&salary=55500&departmentId=1
-    //localhost:8090/employee/add?firstName=андрей&lastName=Полуянов&salary=44000&departmentId=3
-    //localhost:8090/employee/add?firstName=Олег&lastName=Зудин&salary=24000&departmentId=4
+    //localhost:8091/employee/add?firstName=Владимир&lastName=Гуляницкий&salary=25000&departmentId=2
+    //localhost:8091/employee/add?firstName=Виктор&lastName=Судоплатов&salary=55500&departmentId=1
+    //localhost:8091/employee/add?firstName=андрей&lastName=Полуянов&salary=44000&departmentId=3
+    //localhost:8091/employee/add?firstName=Олег&lastName=Зудин&salary=24000&departmentId=4
     public boolean add(@RequestParam String firstName,
                     @RequestParam String lastName,
                     @RequestParam double salary,
@@ -36,7 +36,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/get")
-    //localhost:8090/employee/get?firstName=Владимир&lastName=Гуляницкий
+    //localhost:8091/employee/get?firstName=Владимир&lastName=Гуляницкий
     public String get(@RequestParam String firstName, @RequestParam String lastName) {  //Нахождение элемента Мапы
         try {
             check(firstName, lastName);  //Встроенный метод, выявляющий небуквенные символы в строках имени и фамилии. Если они имеются, то будет исключение WrongNameException()
@@ -49,14 +49,14 @@ public class EmployeeController {
     }
 
     @GetMapping("/remove")
-    //localhost:8090/employee/remove?firstName=Владимир&lastName=Гуляницкий
+    //localhost:8091/employee/remove?firstName=Владимир&lastName=Гуляницкий
     public boolean remove(@RequestParam String firstName, @RequestParam String lastName) {  //Удаление элемента Мапы по его имени и фамилии
         check(firstName, lastName);  //Встроенный метод, выявляющий небуквенные символы в строках имени и фамилии. Если они имеются, то будет исключение WrongNameException()
         return service.removeEmployee(firstName, lastName);
     }
 
     @GetMapping("/all")
-    //localhost:8090/employee/all
+    //localhost:8091/employee/all
     public Collection<Employee> getAll() {  //Вывод только значений элементов Мапы
         return service.getAll();
     }
