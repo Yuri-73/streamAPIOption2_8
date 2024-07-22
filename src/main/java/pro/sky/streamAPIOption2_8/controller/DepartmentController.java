@@ -20,26 +20,26 @@ import java.util.Map;
             this.service = service;
         }
         @GetMapping("{deptId}/salary/sum")
-        //localhost:8090/department/1/salary/sum
-        //localhost:8090/department/2/salary/sum
-        //localhost:8090/department/3/salary/sum
-        //localhost:8090/department/4/salary/sum
+        //localhost:8091/department/1/salary/sum
+        //localhost:8091/department/2/salary/sum
+        //localhost:8091/department/3/salary/sum
+        //localhost:8091/department/4/salary/sum
         public double sumByDept(@PathVariable int deptId) {  //Сумма зарплат по выбранному департаменту
             return service.sum(deptId);
         }
         @GetMapping("{deptId}/salary/max")
-        //localhost:8090/department/1/salary/max
-        //localhost:8090/department/2/salary/max
-        //localhost:8090/department/3/salary/max
-        //localhost:8090/department/4/salary/max
+        //localhost:8091/department/1/salary/max
+        //localhost:8091/department/2/salary/max
+        //localhost:8091/department/3/salary/max
+        //localhost:8091/department/4/salary/max
         public double max(@PathVariable int deptId) {  //Максимальная зарплата по выбранному департаменту
             return service.maxSalary(deptId);
         }
         @GetMapping("{deptId}/salary/min")
-        //localhost:8090/department/1/salary/min
-        //localhost:8090/department/2/salary/min
-        //localhost:8090/department/3/salary/min
-        //localhost:8090/department/4/salary/min
+        //localhost:8091/department/1/salary/min
+        //localhost:8091/department/2/salary/min
+        //localhost:8091/department/3/salary/min
+        //localhost:8091/department/4/salary/min
         public String min(@PathVariable int deptId) {  //Минимальная зарплата по выбранному департаменту
             try {
                 return "" + service.minSalary(deptId);
@@ -48,10 +48,10 @@ import java.util.Map;
             }
         }
         @GetMapping("{deptId}/employees")
-        //localhost:8090/department/1/employees
-        //localhost:8090/department/2/employees
-        //localhost:8090/department/3/employees
-        //localhost:8090/department/4/employees
+        //localhost:8091/department/1/employees
+        //localhost:8091/department/2/employees
+        //localhost:8091/department/3/employees
+        //localhost:8091/department/4/employees
         public List<Employee> find(@PathVariable int deptId) {  //Вывод списка сотрудников выбранного департамента
             return service.findAllByDept(deptId);
         }
